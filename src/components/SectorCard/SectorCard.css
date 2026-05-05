@@ -1,0 +1,32 @@
+.sector-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  text-decoration: none;
+  color: var(--text-primary);
+  display: block;
+  transition: all 0.3s;
+}
+
+.sector-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.sector-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.sector-card h3 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.sector-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
