@@ -1,0 +1,32 @@
+---
+import './Hero.css';
+import Button from '../ui/Button/Button.astro';
+
+interface Props {
+  badge?: string;
+  title: string;
+  titleAccent: string;
+  description: string;
+  primaryCta: { label: string; href: string };
+  secondaryCta: { label: string; href: string };
+}
+
+const { badge, title, titleAccent, description, primaryCta, secondaryCta } = Astro.props;
+---
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      {badge && (
+        <div class="hero-badge">
+          <span>●</span> {badge}
+        </div>
+      )}
+      <h1>{title} <span>{titleAccent}</span></h1>
+      <p>{description}</p>
+      <div class="hero-buttons">
+        <Button href={primaryCta.href} variant="primary" label={primaryCta.label} />
+        <Button href={secondaryCta.href} variant="secondary" label={secondaryCta.label} />
+      </div>
+    </div>
+  </div>
+</section>

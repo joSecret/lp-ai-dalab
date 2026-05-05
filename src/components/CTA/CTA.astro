@@ -1,0 +1,22 @@
+---
+import './CTA.css';
+import Button from '../ui/Button/Button.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  cta: { label: string; href: string };
+  id?: string;
+}
+
+const { title, description, cta, id } = Astro.props;
+---
+<section class="cta" id={id}>
+  <div class="container">
+    <div class="cta-content">
+      <h2>{title}</h2>
+      <p>{description}</p>
+      <Button href={cta.href} variant="primary" label={cta.label} />
+    </div>
+  </div>
+</section>
