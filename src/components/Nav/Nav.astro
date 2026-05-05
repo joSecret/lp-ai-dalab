@@ -1,0 +1,26 @@
+---
+import './Nav.css';
+
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  links: NavLink[];
+  cta: NavLink;
+}
+
+const { links, cta } = Astro.props;
+---
+<nav>
+  <div class="container nav-inner">
+    <a href="/" class="logo">DALAB<span>.</span></a>
+    <ul class="nav-links">
+      {links.map(link => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
+    </ul>
+    <a href={cta.href} class="nav-cta">{cta.label}</a>
+  </div>
+</nav>
