@@ -1,0 +1,30 @@
+---
+import PageLayout from '../../layouts/PageLayout/PageLayout.astro';
+import Section from '../../components/ui/Section/Section.astro';
+import Grid from '../../components/ui/Grid/Grid.astro';
+import SectorCard from '../../components/SectorCard/SectorCard.astro';
+import { getCollection } from 'astro:content';
+
+const sectors = await getCollection('sectors');
+---
+<PageLayout
+  title="Solutions by Sector — DALAB"
+  description="Domain expertise across multiple industries."
+>
+  <Section
+    label="Industries"
+    title="Solutions by Sector"
+    description="We bring deep domain expertise to every engagement"
+  >
+    <Grid minWidth="280px" gap="20px">
+      {sectors.map(sector => (
+        <SectorCard
+          icon={sector.data.icon}
+          title={sector.data.title}
+          description={sector.data.description}
+          slug={sector.id}
+        />
+      ))}
+    </Grid>
+  </Section>
+</PageLayout>
