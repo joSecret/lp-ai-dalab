@@ -1,0 +1,26 @@
+---
+import PageLayout from '../../layouts/PageLayout/PageLayout.astro';
+import Section from '../../components/ui/Section/Section.astro';
+import Grid from '../../components/ui/Grid/Grid.astro';
+import BlogCard from '../../components/BlogCard/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<PageLayout title="Blog — DALAB" description="Insights on software development, AI, and cloud.">
+  <Section label="Insights" title="Our Blog" description="Thoughts on software, AI, and digital transformation">
+    <Grid minWidth="350px">
+      {posts.map(post => (
+        <BlogCard
+          title={post.data.title}
+          category={post.data.category}
+          description={post.data.description}
+          date={post.data.date}
+          slug={post.id}
+          icon={post.data.icon}
+        />
+      ))}
+    </Grid>
+  </Section>
+</PageLayout>
