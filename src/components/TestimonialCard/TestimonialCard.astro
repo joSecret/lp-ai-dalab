@@ -1,0 +1,22 @@
+---
+import './TestimonialCard.css';
+
+interface Props {
+  text: string;
+  name: string;
+  role: string;
+  initials: string;
+}
+
+const { text, name, role, initials } = Astro.props;
+---
+<div class="testimonial-card">
+  <p class="testimonial-text">{text}</p>
+  <div class="testimonial-author">
+    <div class="testimonial-avatar">{initials}</div>
+    <div class="testimonial-info">
+      <h4>{name}</h4>
+      <p>{role}</p>
+    </div>
+  </div>
+</div>

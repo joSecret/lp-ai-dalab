@@ -1,0 +1,11 @@
+---
+import './ClientLogo.css';
+
+interface Props {
+  label: string;
+  href: string;
+}
+
+const { label, href } = Astro.props;
+---
+<a href={href} class="client-logo">{label}</a>

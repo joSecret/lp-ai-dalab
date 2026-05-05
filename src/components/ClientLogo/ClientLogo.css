@@ -1,0 +1,20 @@
+.client-logo {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+
+.client-logo:hover {
+  opacity: 1;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .client-logo {
+    font-size: 16px;
+  }
+}
