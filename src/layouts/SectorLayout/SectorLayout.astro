@@ -1,0 +1,31 @@
+---
+import './SectorLayout.css';
+import BaseLayout from '../BaseLayout/BaseLayout.astro';
+import Nav from '../../components/Nav/Nav.astro';
+import Footer from '../../components/Footer/Footer.astro';
+import navData from '../../data/navigation.json';
+
+interface Props {
+  title: string;
+  icon: string;
+  description: string;
+}
+
+const { title, icon, description } = Astro.props;
+---
+<BaseLayout title={`${title} — DALAB`} description={description}>
+  <Nav links={navData.links} cta={navData.cta} />
+  <main class="sector-main">
+    <div class="container">
+      <div class="sector-header">
+        <div class="sector-hero-icon">{icon}</div>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </div>
+      <div class="sector-content">
+        <slot />
+      </div>
+    </div>
+  </main>
+  <Footer footer={navData.footer} />
+</BaseLayout>
