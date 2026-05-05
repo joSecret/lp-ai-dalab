@@ -1,0 +1,115 @@
+{
+  "philosophy": [
+    { "icon": "⚡", "title": "Performance First", "description": "Every line of code is optimized for speed, scalability, and efficiency. We build software that performs under pressure." },
+    { "icon": "🎯", "title": "Clean Architecture", "description": "We follow industry best practices and maintain clean, maintainable codebases that scale with your business." },
+    { "icon": "🔒", "title": "Security by Default", "description": "Security isn't an afterthought—it's built into every layer of our development process from day one." }
+  ],
+  "expertise": [
+    { "title": "Web Application Development", "description": "Custom web apps built with modern frameworks like React, Vue, and Node.js for maximum performance.", "href": "#" },
+    { "title": "Mobile App Development", "description": "Native and cross-platform mobile apps for iOS and Android that deliver exceptional user experiences.", "href": "#" },
+    { "title": "Cloud Solutions", "description": "AWS, Azure, and GCP architecture design, migration, and optimization services.", "href": "#" },
+    { "title": "API Development", "description": "RESTful and GraphQL API design and implementation for seamless system integrations.", "href": "#" },
+    { "title": "Data Engineering", "description": "Build robust data pipelines, warehouses, and analytics infrastructure at any scale.", "href": "#" },
+    { "title": "DevOps & CI/CD", "description": "Automated deployment pipelines, container orchestration, and infrastructure as code.", "href": "#" }
+  ],
+  "industries": [
+    { "icon": "🏥", "title": "Healthcare", "slug": "healthcare" },
+    { "icon": "💳", "title": "Fintech", "slug": "fintech" },
+    { "icon": "🛒", "title": "E-commerce", "slug": "ecommerce" },
+    { "icon": "📚", "title": "EdTech", "slug": "edtech" },
+    { "icon": "🚗", "title": "Automotive", "slug": "automotive" },
+    { "icon": "🏢", "title": "Real Estate", "slug": "real-estate" }
+  ],
+  "ai": [
+    { "icon": "🤖", "title": "AI Agents", "description": "Autonomous agents that handle complex workflows and decision-making" },
+    { "icon": "🔍", "title": "Semantic Search", "description": "Intelligent search that understands context and intent" },
+    { "icon": "📊", "title": "Analytics", "description": "AI-powered insights and predictive analytics" },
+    { "icon": "⚙️", "title": "Automation", "description": "Workflow automation to reduce manual tasks" }
+  ],
+  "clients": [
+    { "label": "Stripe", "href": "#" },
+    { "label": "Notion", "href": "#" },
+    { "label": "Linear", "href": "#" },
+    { "label": "Vercel", "href": "#" },
+    { "label": "Figma", "href": "#" },
+    { "label": "Webflow", "href": "#" },
+    { "label": "Framer", "href": "#" },
+    { "label": "Raycast", "href": "#" }
+  ],
+  "testimonials": [
+    {
+      "text": "DALAB transformed our outdated system into a modern, scalable platform. Their team delivered on time and exceeded our expectations. The new platform reduced our operational costs by 40%.",
+      "name": "Maria Rodriguez",
+      "role": "CTO, TechFlow Inc",
+      "initials": "MR"
+    },
+    {
+      "text": "Working with DALAB was a game-changer for our startup. They didn't just build what we asked for—they proactively suggested improvements that made our product much better.",
+      "name": "James Chen",
+      "role": "Founder, Pulse",
+      "initials": "JC"
+    },
+    {
+      "text": "The AI automation solution DALAB built for us eliminated hours of manual work. Their expertise in both software and AI is unmatched. Highly recommend!",
+      "name": "Sarah Kim",
+      "role": "VP Operations, DataSync",
+      "initials": "SK"
+    }
+  ],
+  "pricing": [
+    {
+      "tier": "Starter",
+      "name": "MVP Launch",
+      "description": "For startups validating ideas",
+      "amount": "$15,000",
+      "period": "Starting price",
+      "features": ["Single-page web app", "Up to 5 screens", "Basic API integration", "2 revision rounds", "30-day support"],
+      "cta": { "label": "Get Started", "href": "#contact" },
+      "featured": false
+    },
+    {
+      "tier": "Growth",
+      "name": "Product Build",
+      "description": "For growing companies",
+      "amount": "$40,000",
+      "period": "Starting price",
+      "features": ["Full-stack web application", "Up to 15 screens", "Advanced API integrations", "Admin dashboard", "User authentication", "4 revision rounds", "90-day support"],
+      "cta": { "label": "Get Started", "href": "#contact" },
+      "featured": true
+    },
+    {
+      "tier": "Enterprise",
+      "name": "Custom Solution",
+      "description": "For large organizations",
+      "amount": "$100k",
+      "period": "Custom quote",
+      "features": ["Complex multi-app system", "Unlimited screens", "Custom integrations", "Advanced analytics", "Dedicated team", "Unlimited revisions", "12-month support"],
+      "cta": { "label": "Contact Us", "href": "#contact" },
+      "featured": false
+    }
+  ],
+  "stats": [
+    { "value": "270+", "label": "Projects Delivered" },
+    { "value": "9+", "label": "Years Experience" },
+    { "value": "50+", "label": "Team Members" },
+    { "value": "98%", "label": "Client Satisfaction" }
+  ],
+  "faq": [
+    {
+      "question": "How long does a typical project take?",
+      "answer": "Project timelines vary based on scope. A typical MVP takes 8-12 weeks, while more complex applications can take 3-6 months. We provide detailed timelines during the discovery phase."
+    },
+    {
+      "question": "What technologies do you work with?",
+      "answer": "We work with modern technologies including React, Vue, Angular, Node.js, Python, Go, and more. We also have expertise in cloud platforms like AWS, Azure, and GCP."
+    },
+    {
+      "question": "Do you offer ongoing support?",
+      "answer": "Yes! All our projects include a support period after launch. We also offer ongoing maintenance packages to keep your software secure and up-to-date."
+    },
+    {
+      "question": "How do you handle project communication?",
+      "answer": "We assign a dedicated project manager who serves as your main point of contact. You'll have access to our project management tools and receive weekly progress updates."
+    }
+  ]
+}

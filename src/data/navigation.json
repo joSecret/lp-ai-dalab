@@ -1,0 +1,29 @@
+{
+  "links": [
+    { "label": "Services", "href": "#expertise" },
+    { "label": "Solutions", "href": "/solutions" },
+    { "label": "AI Automations", "href": "#ai" },
+    { "label": "Pricing", "href": "#pricing" },
+    { "label": "Insights", "href": "/blog" }
+  ],
+  "cta": { "label": "Get Started", "href": "#contact" },
+  "footer": {
+    "services": [
+      { "label": "Web Development", "href": "#" },
+      { "label": "Mobile Apps", "href": "#" },
+      { "label": "Cloud Solutions", "href": "#" },
+      { "label": "AI & Automation", "href": "#" }
+    ],
+    "company": [
+      { "label": "About", "href": "#" },
+      { "label": "Careers", "href": "#" },
+      { "label": "Blog", "href": "/blog" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "legal": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Terms of Service", "href": "#" },
+      { "label": "Cookie Policy", "href": "#" }
+    ]
+  }
+}
