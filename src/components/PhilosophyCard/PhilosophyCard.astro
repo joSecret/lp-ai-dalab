@@ -1,0 +1,16 @@
+---
+import './PhilosophyCard.css';
+
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+<div class="philosophy-card">
+  <div class="philosophy-icon">{icon}</div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>

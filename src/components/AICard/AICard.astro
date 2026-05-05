@@ -1,0 +1,15 @@
+---
+import './AICard.css';
+
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+<div class="ai-card">
+  <h3>{icon} {title}</h3>
+  <p>{description}</p>
+</div>

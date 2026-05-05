@@ -1,0 +1,25 @@
+.industry-card {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  display: block;
+  transition: all 0.3s;
+}
+
+.industry-card:hover {
+  border-color: var(--accent);
+}
+
+.industry-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.industry-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+}

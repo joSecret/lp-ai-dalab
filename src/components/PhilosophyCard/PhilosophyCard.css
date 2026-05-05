@@ -1,0 +1,36 @@
+.philosophy-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s;
+}
+
+.philosophy-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-4px);
+}
+
+.philosophy-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(249, 115, 22, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.philosophy-card h3 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.philosophy-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}

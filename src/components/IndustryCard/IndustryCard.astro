@@ -1,0 +1,15 @@
+---
+import './IndustryCard.css';
+
+interface Props {
+  icon: string;
+  title: string;
+  slug: string;
+}
+
+const { icon, title, slug } = Astro.props;
+---
+<a href={`/solutions/${slug}`} class="industry-card">
+  <div class="industry-icon">{icon}</div>
+  <h3>{title}</h3>
+</a>

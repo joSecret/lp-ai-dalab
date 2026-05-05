@@ -1,0 +1,16 @@
+---
+import './ExpertiseCard.css';
+
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { title, description, href } = Astro.props;
+---
+<div class="expertise-card">
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={href} class="expertise-link">Learn more →</a>
+</div>
