@@ -1,0 +1,34 @@
+---
+import './Grid.css';
+
+interface Props {
+  layout?: 'grid' | 'flex';
+  minWidth?: string;
+  columns?: number;
+  gap?: string;
+  justify?: string;
+  align?: string;
+}
+
+const {
+  layout = 'grid',
+  minWidth = '300px',
+  columns,
+  gap = '24px',
+  justify = 'center',
+  align = 'center',
+} = Astro.props;
+
+const styles: string[] = [`gap: ${gap}`];
+if (layout === 'grid') {
+  const cols = columns
+    ? `repeat(${columns}, 1fr)`
+    : `repeat(auto-fit, minmax(${minWidth}, 1fr))`;
+  styles.push(`grid-template-columns: ${cols}`);
+} else {
+  styles.push(`justify-content: ${justify}`, `align-items: ${align}`);
+}
+---
+<div class="grid" data-layout={layout} style={styles.join('; ')}>
+  <slot />
+</div>

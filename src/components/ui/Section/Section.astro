@@ -1,0 +1,25 @@
+---
+import './Section.css';
+import SectionHeader from '../SectionHeader/SectionHeader.astro';
+
+interface Props {
+  label?: string;
+  title?: string;
+  description?: string;
+  bordered?: boolean;
+  bgCard?: boolean;
+  compact?: boolean;
+  id?: string;
+}
+
+const { label, title, description, bordered, bgCard, compact, id } = Astro.props;
+---
+<section
+  id={id}
+  class:list={['section', { bordered, 'bg-card': bgCard, compact }]}
+>
+  <div class="container">
+    {title && <SectionHeader {label} {title} {description} />}
+    <slot />
+  </div>
+</section>

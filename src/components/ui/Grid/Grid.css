@@ -1,0 +1,8 @@
+.grid[data-layout="grid"] {
+  display: grid;
+}
+
+.grid[data-layout="flex"] {
+  display: flex;
+  flex-wrap: wrap;
+}
