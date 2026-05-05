@@ -1,0 +1,30 @@
+---
+import './PricingCard.css';
+import Button from '../ui/Button/Button.astro';
+
+interface Props {
+  tier: string;
+  name: string;
+  description: string;
+  amount: string;
+  period: string;
+  features: string[];
+  cta: { label: string; href: string };
+  featured?: boolean;
+}
+
+const { tier, name, description, amount, period, features, cta, featured = false } = Astro.props;
+---
+<div class:list={['pricing-card', { featured }]}>
+  <div class="pricing-tier">{tier}</div>
+  <div class="pricing-name">{name}</div>
+  <p class="pricing-desc">{description}</p>
+  <div class="pricing-price">
+    <div class="pricing-amount">{amount}<span>+</span></div>
+    <div class="pricing-period">{period}</div>
+  </div>
+  <ul class="pricing-features">
+    {features.map(f => <li>{f}</li>)}
+  </ul>
+  <Button href={cta.href} variant={featured ? 'primary' : 'secondary'} label={cta.label} />
+</div>
