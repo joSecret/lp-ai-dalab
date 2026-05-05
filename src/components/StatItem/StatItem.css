@@ -1,0 +1,16 @@
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.stat-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}

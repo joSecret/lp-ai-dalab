@@ -1,0 +1,19 @@
+---
+import './FAQItem.css';
+
+interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+<div class="faq-item">
+  <button class="faq-question">
+    <h4>{question}</h4>
+    <span class="faq-icon">+</span>
+  </button>
+  <div class="faq-answer">
+    <p>{answer}</p>
+  </div>
+</div>
