@@ -1,17 +1,141 @@
 ---
+import PageLayout from '../layouts/PageLayout/PageLayout.astro';
+import Hero from '../components/Hero/Hero.astro';
+import Section from '../components/ui/Section/Section.astro';
+import Grid from '../components/ui/Grid/Grid.astro';
+import PhilosophyCard from '../components/PhilosophyCard/PhilosophyCard.astro';
+import ExpertiseCard from '../components/ExpertiseCard/ExpertiseCard.astro';
+import IndustryCard from '../components/IndustryCard/IndustryCard.astro';
+import AICard from '../components/AICard/AICard.astro';
+import ClientLogo from '../components/ClientLogo/ClientLogo.astro';
+import TestimonialCard from '../components/TestimonialCard/TestimonialCard.astro';
+import PricingCard from '../components/PricingCard/PricingCard.astro';
+import StatItem from '../components/StatItem/StatItem.astro';
+import FAQItem from '../components/FAQItem/FAQItem.astro';
+import BlogCard from '../components/BlogCard/BlogCard.astro';
+import CTA from '../components/CTA/CTA.astro';
+import { getCollection } from 'astro:content';
+import data from '../data/homepage.json';
 
+const blogPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 ---
+<PageLayout>
+  <Hero
+    badge="Trusted by 270+ companies worldwide"
+    title="Build Better Software"
+    titleAccent="Faster"
+    description="We help ambitious companies design, build, and scale custom software solutions that drive real business results."
+    primaryCta={{ label: 'Start Your Project', href: '#contact' }}
+    secondaryCta={{ label: 'Explore Services', href: '#expertise' }}
+  />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <Section label="Our Philosophy" title="Simplicity, Best Practices & High Performance" bordered>
+    <Grid minWidth="300px">
+      {data.philosophy.map(item => <PhilosophyCard {...item} />)}
+    </Grid>
+  </Section>
+
+  <Section id="expertise" label="What We Do" title="Our Expertise" description="End-to-end software development services tailored to your business needs">
+    <Grid minWidth="280px">
+      {data.expertise.map(item => <ExpertiseCard {...item} />)}
+    </Grid>
+  </Section>
+
+  <Section id="industries" label="Industries" title="Solutions by Sector" description="Domain expertise across multiple industries" bgCard>
+    <Grid minWidth="200px" gap="20px">
+      {data.industries.map(item => <IndustryCard {...item} />)}
+    </Grid>
+  </Section>
+
+  <Section id="ai" label="AI & Automation" title="Intelligent Solutions" description="Leverage AI to automate workflows and unlock insights">
+    <Grid minWidth="250px">
+      {data.ai.map(item => <AICard {...item} />)}
+    </Grid>
+  </Section>
+
+  <Section label="Trusted By" title="Companies That Rely On Us" bgCard bordered compact>
+    <Grid layout="flex" gap="48px 64px">
+      {data.clients.map(c => <ClientLogo {...c} />)}
+    </Grid>
+  </Section>
+
+  <Section label="Testimonials" title="What Clients Say" description="Real feedback from real partners">
+    <Grid minWidth="350px">
+      {data.testimonials.map(t => <TestimonialCard {...t} />)}
+    </Grid>
+  </Section>
+
+  <Section id="pricing" label="Pricing" title="Choose Your Plan" description="Transparent pricing with no hidden fees" bgCard>
+    <div class="pricing-wrapper">
+      <Grid minWidth="300px">
+        {data.pricing.map(p => <PricingCard {...p} />)}
+      </Grid>
+    </div>
+  </Section>
+
+  <Section id="blog" label="Insights" title="Latest from Our Blog">
+    <Grid minWidth="350px">
+      {blogPosts.map(post => (
+        <BlogCard
+          title={post.data.title}
+          category={post.data.category}
+          description={post.data.description}
+          date={post.data.date}
+          slug={post.id}
+          icon={post.data.icon}
+        />
+      ))}
+    </Grid>
+  </Section>
+
+  <Section bordered compact>
+    <Grid columns={4}>
+      {data.stats.map(s => <StatItem {...s} />)}
+    </Grid>
+  </Section>
+
+  <Section id="faq" label="FAQ" title="Frequently Asked Questions">
+    <div class="faq-list">
+      {data.faq.map(item => <FAQItem {...item} />)}
+    </div>
+  </Section>
+
+  <CTA
+    title="Ready to Build Something Great?"
+    description="Let's discuss your project and find the perfect solution for your business."
+    cta={{ label: 'Start a Conversation', href: 'mailto:hello@dalab.top' }}
+    id="contact"
+  />
+</PageLayout>
+
+<style>
+  .pricing-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      button.parentElement?.classList.toggle('active');
+    });
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      const href = (anchor as HTMLAnchorElement).getAttribute('href');
+      if (href) {
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
