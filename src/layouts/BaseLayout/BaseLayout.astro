@@ -1,0 +1,29 @@
+---
+import { Font } from 'astro:assets';
+import '../../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'DALAB — IT Solutions & Digital Transformation',
+  description = 'We help ambitious companies design, build, and scale custom software solutions.',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <Font cssVariable="--font-inter" />
+    <Font cssVariable="--font-space-grotesk" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
