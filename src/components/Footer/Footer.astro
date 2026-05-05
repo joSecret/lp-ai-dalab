@@ -1,0 +1,50 @@
+---
+import './Footer.css';
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  footer: {
+    services: FooterLink[];
+    company: FooterLink[];
+    legal: FooterLink[];
+  };
+}
+
+const { footer } = Astro.props;
+---
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">DALAB<span>.</span></a>
+        <p>We build software that helps companies grow. Simple, scalable, high-performance solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          {footer.services.map(link => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          {footer.company.map(link => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          {footer.legal.map(link => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 DALAB. All rights reserved.</p>
+      <p>Made with ❤️ worldwide</p>
+    </div>
+  </div>
+</footer>
